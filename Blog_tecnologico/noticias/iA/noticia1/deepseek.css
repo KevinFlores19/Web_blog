@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body { 
+    background-color: #f3f6f6;
+    font-family: 'Inter', sans-serif;
+ /* margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+    
+}
+
+/* Barra de navegación */
+nav {
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 36px;
+    font-size: 15px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre los enlaces */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: #4a90e2;
+}
+
+/* Encabezado */
+header {
+    background-color: black;
+    display: flow-root;
+    margin: 0px;
+}
+
+/* Estilos para el menú responsivo */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: none; /* Oculta los enlaces en móviles */
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura del nav */
+        left: 0;
+        padding: 10px 0;
+        border-radius: 0 0 36px 36px;
+        z-index: 3;
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+}
