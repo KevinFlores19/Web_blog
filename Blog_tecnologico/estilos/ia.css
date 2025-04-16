@@ -141,7 +141,7 @@ header {
     height: auto;
 }
 
-.principal button {
+ .btn {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #4a90e2;
@@ -150,9 +150,10 @@ header {
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.principal button:hover {
+.btn:hover {
     background-color: #3578bd;
 }
 
