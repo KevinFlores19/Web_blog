@@ -10,21 +10,18 @@
 body { 
     background-color: #f3f6f6;
     font-family: 'Inter', sans-serif;
- /* margin: 0;
-    padding: 0;
-    box-sizing: border-box; */
-    
+
 }
 
 /* Barra de navegación */
 nav {
     background-color: black;
-    padding: 10px 20px;
+    padding: 10px 5%;
     border-radius: 36px;
     font-size: 15px;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 20px;
+    margin: 20px auto;
+    max-width: calc(100% - 40px);
+    overflow: hidden;
     position: relative;
     z-index: 2;
 }
@@ -32,7 +29,7 @@ nav {
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Espacio entre los enlaces */
+    gap: 30px;
 }
 
 .nav-link {
@@ -41,10 +38,11 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    white-space: nowrap; /* Evita el salto de línea */
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #4a90e2;
 }
 
@@ -69,34 +67,6 @@ header {
     margin: 4px 0;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    nav {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .nav-links {
-        display: none; /* Oculta los enlaces en móviles */
-        flex-direction: column;
-        width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 60px; /* Ajusta según la altura del nav */
-        left: 0;
-        padding: 10px 0;
-        border-radius: 0 0 36px 36px;
-        z-index: 3;
-    }
-
-    .nav-links.active {
-        display: flex; 
-    }
-
-    .menu-toggle {
-        display: flex; 
-    }
-}
 
 /* Sección de Noticia principal */
 .principal {
@@ -116,7 +86,7 @@ header {
 }
 
 .principal h2 {
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 24px);
     color: black;
     margin-top: 0;
 }
@@ -131,15 +101,25 @@ header {
 .image-container {
     position: relative;
     z-index: 2;
-    margin-top: -55px; /* Genera el efecto de profundidad entre el texto y la imagen */
+    margin: 0 auto;
+    margin-top: -50px; /* Logra el efecto de profundidad */
     animation: slideUp 1.5s ease-out;
+    max-width: 100%; /* Limita el ancho máximo del contenedor */
+    overflow: hidden; /* Evita que el contenido salga del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tablet-image {
-    max-width: 100%;
-    width: 500px;
-    height: auto;
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    object-fit: contain; 
+    margin: 0 auto; 
+    margin-bottom: 50px;
 }
+
 
 .btn {
     margin-top: 20px;
@@ -168,6 +148,56 @@ header {
         opacity: 1;
     }
 }
+
+
+/* Estilos responsivos para el NAV BAR Y SECCION PRINCIPAL*/
+@media (max-width: 768px) {
+    nav {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        border-radius: 0 0 36px 36px;
+        z-index: 3;
+        overflow: hidden;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .principal {
+        padding: 20px 5%;
+    }
+
+    .image-container {
+        margin-top: -20px; /* Reduce el espacio negativo en pantallas pequeñas */
+    }
+
+    .tablet-image {
+        max-width: 300px; /* Reduce el tamaño máximo de la imagen en dispositivos pequeños */
+    }
+
+    .principal {
+        padding: 20px; /* Ajusta los márgenes para pantallas más pequeñas */
+    }
+}
+
+
+
 
 /*Estilos para el carrusel */
 .carrusel { 
