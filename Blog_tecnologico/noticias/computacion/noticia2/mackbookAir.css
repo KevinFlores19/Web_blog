@@ -1,33 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+/* General */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   font-family: "Arial", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 body { 
     background-color: #f3f6f6;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-
-/* Barra de navegación */
+/* Estilos para la Barra de navegación */
 nav {
     background-color: black;
     padding: 10px 20px;
     border-radius: 36px;
     font-size: 15px;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 20px;
+    margin: 20px auto; /* Centra la barra horizontalmente */
     position: relative;
     z-index: 2;
+    max-width: calc(100% - 40px); /* Evita que el nav sea más ancho que la pantalla */
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Espacio entre los enlaces */
+    gap: 20px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas si es necesario */
 }
 
 .nav-link {
@@ -36,6 +38,7 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que los enlaces se dividan en varias líneas */
 }
 
 .nav-link:hover {
@@ -45,9 +48,9 @@ nav {
 
 /* Encabezado */
 header {
-    background-color: black;
+    background-color: #e4f1f9;
     display: flow-root;
-    margin: 0px;
+    margin: 0;
 }
 
 /* Estilos para el menú responsivo */
@@ -64,61 +67,33 @@ header {
     margin: 4px 0;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    nav {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .nav-links {
-        display: none; /* Oculta los enlaces en móviles */
-        flex-direction: column;
-        width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 60px; /* Ajusta según la altura del nav */
-        left: 0;
-        padding: 10px 0;
-        border-radius: 0 0 36px 36px;
-        z-index: 3;
-    }
-
-    .nav-links.active {
-        display: flex; 
-    }
-
-    .menu-toggle {
-        display: flex; 
-    }
-}
 
 /* Sección de Noticia principal */
 .principal {
-    background-color: black;
+    background-color: #e4f1f9;
     text-align: center;
     padding: 50px 20px;
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
     position: relative;
-    z-index: 1; /* Coloca la sección detrás del menú desplegable */
+    z-index: 1;
     overflow: hidden;
 }
 
 .text-container {
     position: relative;
-    z-index: 1; /* Asegura que el texto esté detrás de la imagen */
+    z-index: 1;
 }
 
 .principal h2 {
-    font-size: 24px;
+    font-size: 20px; 
     color: black;
     margin-top: 0;
 }
 
 .principal h1 {
-    font-size: 50px;
-    color: white;
+    font-size: 70px; 
+    color: #5ea5c4;
     margin-bottom: 20px;
     margin-top: 10px;
 }
@@ -126,15 +101,16 @@ header {
 .image-container {
     position: relative;
     z-index: 2;
-    margin-top: -30px; /* Genera el efecto de profundidad entre el texto y la imagen */
+    margin-top: -10px;
     animation: slideUp 1.5s ease-out;
 }
 
 .tablet-image {
     max-width: 100%;
-    width: 500px;
+    width: 600px;
     height: auto;
 }
+
 /* Animación de deslizamiento */
 @keyframes slideUp {
     0% {
@@ -148,24 +124,79 @@ header {
 }
 
 
-/*  Introduccion */
-.intro-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: "Inter", sans-serif;
+/* Estilos responsivos Nav Bar y Seccion de inicio*/
+@media (max-width: 768px) {
+    nav {
+        margin: 10px auto;
+        max-width: calc(100% - 20px);
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        border-radius: 0 0 36px 36px;
+        z-index: 3;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .principal {
+        padding: 20px;
+    }
+
+    .principal h1 {
+        font-size: 40px;
+    }
+
+    .principal h2 {
+        font-size: 16px;
+    }
+
+    .tablet-image {
+        width: 300px;
+    }
 }
 
 .introduction {
-    text-align: justify;
-    padding: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header .subtitle {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .header .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .header .description {
     font-size: 18px;
-}
+    color: #6c757d;
+    margin: 10px 0 20px;
+    text-align: justify;
+  }
 
-/* Etiquetas sobre las especificaciones */ 
-/* Etiquetas con info de la noticia */
+/* Etiquetas sobre las especificaciones */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -216,7 +247,7 @@ header {
 }
 
 .horizontal img {
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -243,7 +274,7 @@ header {
 .vertical-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%; /* Ocupa todo el espacio disponible */
 }
 
 .vertical img {
@@ -252,12 +283,11 @@ header {
     width: auto;
     height: auto;
     object-fit: contain;
-    margin: 0 auto 15px;
-    border-radius: 10px;
+    margin: 0 auto 15px; /* Centrado con margen inferior */
 }
 
 .vertical p {
-    flex-grow: 1;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
     text-align: justify;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -272,7 +302,7 @@ header {
     color: #333;
 }
 
-/* Diseño responsivo para los contenedores verticales y horizontal*/
+/* Diseño responsivo */
 @media (max-width: 768px) {
     .horizontal {
         flex-direction: column;
@@ -292,13 +322,13 @@ header {
     }
 
     .vertical {
-        min-height: auto;
+        min-height: auto; /* Elimina la altura mínima en móviles */
         height: auto;
         padding: 15px;
     }
 
     .vertical img {
-        max-height: 150px;
+        max-height: 150px; /* Reduce la altura máxima en móviles */
     }
 }
 
@@ -322,8 +352,8 @@ header {
 }
 
 
-/* Estilos del footer */
-.footer {
+  /* Estilos del footer */
+  .footer {
     background-color: #111;
     color: white;
     padding: 40px 20px;
@@ -406,5 +436,8 @@ header {
     .footer-section {
         text-align: center;
     }
-}
 
+    .social-icons {
+        justify-content: center;
+    }
+}
