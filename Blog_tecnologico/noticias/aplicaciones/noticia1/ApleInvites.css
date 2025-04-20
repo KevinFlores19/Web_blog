@@ -218,31 +218,34 @@ header {
 
 
 /* Carrusel 2 */ 
-.carrusel2 h1 {
-    font-size: 40px;
-    color: #188C9B;
-    margin-bottom: 30px;
-} 
+/* Carrusel 2 */ 
 .carrusel2 {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     background-color: #f3f6f6;
+    width: 100%;
 }  
 
+.carrusel2 h1 {
+    font-size: clamp(28px, 5vw, 40px); /* Tamaño responsive */
+    color: #188C9B;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .carousel-container {
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 400px; /* Aumenté el ancho máximo */
     text-align: center;
     position: relative;
-}
-.carousel-container .description{
-    font-size: 12px;
+    margin: 0 auto;
 }
 
 .carousel {
@@ -252,10 +255,12 @@ header {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     width: 100%;
-    height: 600px; /* Altura inicial */
+    height: 500px; /* Altura fija */
     position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .carousel-inner {
@@ -268,82 +273,83 @@ header {
 .carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Cambiado a contain para ver toda la imagen */
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    transform: scale(1.02);
+    transition: opacity 0.8s ease-in-out;
+    padding: 20px; /* Espacio alrededor de la imagen */
+    background-color: white;
 }
 
 .carousel img.active {
     opacity: 1;
-    transform: scale(1);
     z-index: 1;
-}
-
-.carousel img.prev {
-    transform: scale(0.98);
 }
 
 .carousel .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: lightgray;
+    background-color: rgba(255,255,255,0.9);
     border: none;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 40px;
-    height: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10; 
-    font-size: 18px;
-    color: #333;
+    z-index: 10;
+    font-size: 20px;
+    color: #188C9B;
+    backdrop-filter: blur(2px);
 }
 
 .carousel .arrow:hover {
-    background-color: #fff;
+    background-color: #188C9B;
+    color: white;
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .carousel .arrow.left {
-    left: 10px;
+    left: 20px;
 }
 
 .carousel .arrow.right {
-    right: 10px;
+    right: 20px;
 }
 
 .description {
-    margin-top: 25px;
-    font-size: 16px;
+    margin: 25px auto 0;
+    font-size: clamp(14px, 2vw, 16px); /* Tamaño responsive */
     color: #555;
     line-height: 1.6;
     padding: 0 20px;
+    max-width: 600px;
+    text-align: center;
     transition: opacity 0.3s ease;
 }
 
 .indicators {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
+    margin: 20px 0;
+    gap: 12px;
 }
 
 .indicators .dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background-color: #ddd;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .indicators .dot:hover {
@@ -352,58 +358,56 @@ header {
 }
 
 .indicators .dot.active {
-    background-color: #4a6cf7;
+    background-color: #188C9B;
     transform: scale(1.2);
+    border-color: rgba(24, 140, 155, 0.3);
 }
 
-/* Animación para el texto de descripción */
-.description.fade {
-    opacity: 0;
+/* Efecto de hover para el contenedor del carrusel */
+.carousel:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Responsividad con media queries */
+/* Responsividad mejorada */
 @media (max-width: 768px) {
     .carousel {
-        height: 400px; /* Reducir la altura en pantallas medianas */
+        height: 500px; /* Mantenemos la misma altura */
     }
-
-    .description {
-        font-size: 14px; /* Reducir el tamaño de fuente */
-        padding: 0 10px;
-    }
-
+    
     .carousel .arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
-        height: 300px; /* Reducir la altura en pantallas pequeñas */
+        height: 500px; /* Seguimos manteniendo la misma altura */
+        border-radius: 15px;
     }
-
-    .carousel-container {
-        width: 100%; /* Ajustar al ancho de la pantalla */
+    
+    .carousel img {
+        padding: 15px;
     }
-
-    .description {
-        font-size: 12px; /* Reducir más el tamaño de fuente */
-        padding: 0 5px;
-    }
-
+    
     .carousel .arrow {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
     }
-
+    
     .indicators .dot {
-        width: 10px;
-        height: 10px; /* Reducir el tamaño de los indicadores */
+        width: 12px;
+        height: 12px;
+    }
+    
+    .carrusel2 {
+        padding: 40px 15px;
     }
 }
+
 
 
 /* Estilos del footer */
