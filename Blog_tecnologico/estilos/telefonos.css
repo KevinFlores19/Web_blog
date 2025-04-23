@@ -45,8 +45,14 @@ nav {
     color: #4a90e2;
 }
 
+/* Encabezado */
+header {
+    background-color: rgba(170, 213, 242, 0.90);
+    display: flow-root;
+    margin: 0px;
+}
 
-/* Estilos para el menu responsivo */
+/* Estilos para el menú responsivo */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -60,12 +66,36 @@ nav {
     margin: 4px 0;
 }
 
-/* Encabezado */
-header {
-    background-color: rgba(170, 213, 242, 0.90);
-    display: flow-root;
-    margin: 0px;
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: none; /* Oculta los enlaces en móviles */
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura del nav */
+        left: 0;
+        padding: 10px 0;
+        border-radius: 0 0 36px 36px;
+        z-index: 3;
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
 }
+
+
 
 /* Sección de Noticia principal */
 .principal {

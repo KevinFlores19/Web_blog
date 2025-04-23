@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios - TechRunners</title>
+    <link rel="stylesheet" href="./estilos/formulario.css">
+</head>
+<body>
+    
+<!-- Barra de menú de navegación -->
+<header class="header">
+    <nav class="nav">
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- Enlaces de navegación -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="telefonos.html" class="nav-link">Teléfonos</a>
+            <a href="computacion.html" class="nav-link">Computación</a>
+            <a href="ia.html" class="nav-link">IA</a>
+            <a href="aplicaciones.html" class="nav-link">Aplicaciones</a>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Sección de Noticia principal -->
+<section class="principal">
+    <div class="text-container">
+        <h2>Danos tu opinión</h2>
+        <h1>Sección de comentarios</h1>
+    </div>
+    <div class="image-container">
+        <img src="./img/coments_icon.png" alt="TabletDeepSeek" class="tablet-image">
+    </div>
+</section>
+
+<!--Sección de comentarios-->
+<section class="comments-section">
+    <div class="comments-container">
+        <h2 class="comments-title">Deja tu comentario</h2>
+        
+        <form id="comment-form" class="comment-form">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Tu comentario</label>
+                <textarea id="comment" class="form-control" required></textarea>
+            </div>
+            
+            <button class="submit-btn">Publicar comentario</button>
+        </form>
+
+        <div class="comments-list" id="comments-list">
+            <h3>Comentarios recientes</h3>
+            <ul id="comments-container"></ul> <!-- Contenedor exclusivo para comentarios -->
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Información de contacto -->
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+            <p><i class="fas fa-phone-alt"></i> +52 123 456 7890</p>
+            <p><i class="fas fa-envelope"></i> kevin.flores@icloud.com </p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="footer-section">
+            <h4>Enlaces rápidos</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="telefonos.html">Teléfonos</a></li>
+                <li><a href="computacion.html">Computación</a></li>
+                <li><a href="ia.html">IA</a></li>
+                <li><a href="aplicaciones.html">Aplicaciones</a></li>
+            </ul>
+        </div>
+
+    <!-- Derechos reservados -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 TechRunners. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!--IMPORTAMOS FIREBASE-->
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+
+<script type="module">
+    
+  </script>
+  
+
+<!--MIS SCRIPTS-->
+  <script type="module" src="./scripts/formulario.js"></script>
+
+</body>
+</html>
