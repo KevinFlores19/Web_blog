@@ -334,7 +334,7 @@ header {
     justify-content: center;
     background: #f3f6f6;
     font-size: 28px;
-    padding-bottom: 200px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -390,6 +390,8 @@ header {
         font-size: 1em; 
     }
 }
+
+
 
 
   /* Estilos del footer */

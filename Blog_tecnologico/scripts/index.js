@@ -74,3 +74,5 @@ var words = ['innovación.', 'conectividad.', 'inspiración.', 'revolución.'],
         }
       
       }, 150);
+
+//Script paara el video
