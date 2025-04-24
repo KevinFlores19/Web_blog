@@ -107,7 +107,7 @@ header {
 
 .tablet-image {
     max-width: 100%;
-    width: 600px;
+    width: 400px;
     height: auto;
 }
 
@@ -168,6 +168,7 @@ header {
         width: 300px;
     }
 }
+
 
 
 /*Estilos para la introduccion a la noticia */

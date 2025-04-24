@@ -19,20 +19,20 @@ body {
 /* Barra de navegación */
 nav {
     background-color: black;
-    padding: 10px 5%;
+    padding: 10px 20px;
     border-radius: 36px;
     font-size: 15px;
-    margin: 20px auto;
-    max-width: calc(100% - 40px);
-    overflow: hidden;
+    margin: 20px auto; /* Centra la barra horizontalmente */
     position: relative;
     z-index: 2;
+    max-width: calc(100% - 40px); /* Evita que el nav sea más ancho que la pantalla */
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas si es necesario */
 }
 
 .nav-link {
@@ -41,15 +41,22 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
-    white-space: nowrap; /* Evita el salto de línea */
+    white-space: nowrap; /* Evita que los enlaces se dividan en varias líneas */
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     color: #4a90e2;
 }
 
-/* Estilos para el menu responsivo */
+/* Encabezado */
+header {
+    background-color: rgba(178, 205, 255, 0.7);
+    display: flow-root;
+    margin: 0;
+}
+
+/* Estilos para el menú responsivo */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -63,13 +70,6 @@ nav {
     margin: 4px 0;
 }
 
-/* Encabezado */
-header {
-    background-color: rgba(178, 205, 255, 0.7);
-    display: flow-root;
-    margin: 0px;
-}
-
 /* Sección de Noticia principal */
 .principal {
     background-color: rgba(178, 205, 255, 0.7);
@@ -78,23 +78,23 @@ header {
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
     position: relative;
-    z-index: 1; /* Coloca la sección detrás del menú desplegable */
+    z-index: 1;
     overflow: hidden;
 }
 
 .text-container {
     position: relative;
-    z-index: 1; /* Asegura que el texto esté detrás de la imagen */
+    z-index: 1;
 }
 
 .principal h2 {
-    font-size: 24px;
+    font-size: 24px; 
     color: black;
     margin-top: 0;
 }
 
 .principal h1 {
-    font-size: 65px;
+    font-size: 70px; 
     color: #5271FF;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -103,7 +103,7 @@ header {
 .image-container {
     position: relative;
     z-index: 2;
-    margin-top: -55px; /* Genera el efecto de profundidad entre el texto y la imagen */
+    margin-top: -65px;
     animation: slideUp 1.5s ease-out;
 }
 
@@ -113,7 +113,7 @@ header {
     height: auto;
 }
 
- .btn {
+.btn {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #4a90e2;
@@ -129,6 +129,7 @@ header {
     background-color: #3578bd;
 }
 
+
 /* Animación de deslizamiento */
 @keyframes slideUp {
     0% {
@@ -141,12 +142,11 @@ header {
     }
 }
 
-
-/* Estilos responsivos para el NAV BAR Y SECCION PRINCIPAL*/
+/* Estilos responsivos */
 @media (max-width: 768px) {
     nav {
         margin: 10px auto;
-        padding: 10px;
+        max-width: calc(100% - 20px);
     }
 
     .nav-links {
@@ -160,7 +160,6 @@ header {
         padding: 10px 0;
         border-radius: 0 0 36px 36px;
         z-index: 3;
-        overflow: hidden;
     }
 
     .nav-links.active {
@@ -172,19 +171,20 @@ header {
     }
 
     .principal {
-        padding: 20px 5%;
+        padding: 20px;
     }
 
-    .image-container {
-        margin-top: -80px; /* Reduce el espacio negativo en pantallas pequeñas */
+    .principal h1 {
+        font-size: 40px;
+    }
+
+    .principal h2 {
+        font-size: 16px;
     }
 
     .tablet-image {
-        max-width: 300px; /* Reduce el tamaño máximo de la imagen en dispositivos pequeños */
-    }
-
-    .principal {
-        padding: 20px; /* Ajusta los márgenes para pantallas más pequeñas */
+        width: 300px;
+        margin-top: 70px;
     }
 }
 

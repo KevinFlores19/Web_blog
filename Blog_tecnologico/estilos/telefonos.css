@@ -15,20 +15,20 @@ body {
 /* Barra de navegación */
 nav {
     background-color: black;
-    padding: 10px 5%;
+    padding: 10px 20px;
     border-radius: 36px;
     font-size: 15px;
-    margin: 20px auto;
-    max-width: calc(100% - 40px);
-    overflow: hidden;
+    margin: 20px auto; /* Centra la barra horizontalmente */
     position: relative;
     z-index: 2;
+    max-width: calc(100% - 40px); /* Evita que el nav sea más ancho que la pantalla */
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas si es necesario */
 }
 
 .nav-link {
@@ -37,11 +37,11 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
-    white-space: nowrap; /* Evita el salto de línea */
+    white-space: nowrap; /* Evita que los enlaces se dividan en varias líneas */
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     color: #4a90e2;
 }
 
@@ -49,7 +49,7 @@ nav {
 header {
     background-color: rgba(170, 213, 242, 0.90);
     display: flow-root;
-    margin: 0px;
+    margin: 0;
 }
 
 /* Estilos para el menú responsivo */
@@ -65,37 +65,6 @@ header {
     background-color: white;
     margin: 4px 0;
 }
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    nav {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .nav-links {
-        display: none; /* Oculta los enlaces en móviles */
-        flex-direction: column;
-        width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 60px; /* Ajusta según la altura del nav */
-        left: 0;
-        padding: 10px 0;
-        border-radius: 0 0 36px 36px;
-        z-index: 3;
-    }
-
-    .nav-links.active {
-        display: flex; 
-    }
-
-    .menu-toggle {
-        display: flex; 
-    }
-}
-
-
 
 /* Sección de Noticia principal */
 .principal {
@@ -115,40 +84,31 @@ header {
 }
 
 .principal h2 {
-    font-size: clamp(16px, 4vw, 24px);
+    font-size: 24px; 
     color: black;
     margin-top: 0;
 }
 
 .principal h1 {
-    font-size: clamp(28px, 6vw, 40px);
+    font-size: 70px; 
     color: #172E9A;
-    margin: 10px 0 20px 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-/* -----------------------*/
 .image-container {
     position: relative;
     z-index: 2;
-    margin: 0 auto;
-    margin-top: -120px; /* Logra el efecto de profundidad */
+    margin-top: -150px;
     animation: slideUp 1.5s ease-out;
-    max-width: 100%; /* Limita el ancho máximo del contenedor */
-    overflow: hidden; /* Evita que el contenido salga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .tablet-image {
-    width: 100%; 
-    max-width: 400px; 
-    height: auto; 
-    object-fit: contain; 
-    margin: 0 auto; 
+    max-width: 100%;
+    width: 500px;
+    height: auto;
 }
 
-/* -----------------------*/
 .btn {
     margin-top: 20px;
     padding: 10px 20px;
@@ -165,6 +125,7 @@ header {
     background-color: #3578bd;
 }
 
+
 /* Animación de deslizamiento */
 @keyframes slideUp {
     0% {
@@ -177,11 +138,11 @@ header {
     }
 }
 
-/* Estilos responsivos para el NAV BAR Y SECCION PRINCIPAL*/
+/* Estilos responsivos */
 @media (max-width: 768px) {
     nav {
         margin: 10px auto;
-        padding: 10px;
+        max-width: calc(100% - 20px);
     }
 
     .nav-links {
@@ -195,7 +156,6 @@ header {
         padding: 10px 0;
         border-radius: 0 0 36px 36px;
         z-index: 3;
-        overflow: hidden;
     }
 
     .nav-links.active {
@@ -207,19 +167,20 @@ header {
     }
 
     .principal {
-        padding: 20px 5%;
+        padding: 20px;
     }
 
-    .image-container {
-        margin-top: -80px; /* Reduce el espacio negativo en pantallas pequeñas */
+    .principal h1 {
+        font-size: 40px;
+    }
+
+    .principal h2 {
+        font-size: 16px;
     }
 
     .tablet-image {
-        max-width: 300px; /* Reduce el tamaño máximo de la imagen en dispositivos pequeños */
-    }
-
-    .principal {
-        padding: 20px; /* Ajusta los márgenes para pantallas más pequeñas */
+        width: 300px;
+        margin-top: 70px;
     }
 }
 
